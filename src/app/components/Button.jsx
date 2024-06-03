@@ -4,11 +4,12 @@ const Button = () => {
   const dispatch = useDispatch();
   const counter = useSelector((state) => state.counter);
   const clickHandler = () => {
-    const action = calcType === '+'
-  }
+    const action = calcType === '+' ? add(2) : minus(2);
+    dispatch(action);
+  };
   return (
     <div>
-      <button>button</button>
+      <button onClick={clickHandler}>button</button>
     </div>
   );
 };
